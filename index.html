@@ -116,18 +116,39 @@
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
     }
 
+    /* Upsell card at top */
     .notice {
       padding: 12px 14px;
       border-radius: 10px;
-      background: var(--blue-lighter);
+      background: #f9fafb;
       color: var(--text-muted);
       font-size: 0.9rem;
       margin-bottom: 16px;
-      border: 1px solid #c7d2fe;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .notice strong {
+    .notice-left {
+      max-width: 100%;
+      flex: 1 1 200px;
+    }
+
+    .notice-title {
+      font-weight: 600;
       color: var(--blue-main);
+      margin-bottom: 4px;
+    }
+
+    .notice-text {
+      line-height: 1.35;
+    }
+
+    .notice-actions {
+      flex: 0 0 auto;
     }
 
     .topic-list {
@@ -267,6 +288,7 @@
       font-weight: 500;
       transition: background 0.15s ease, transform 0.05s ease,
         box-shadow 0.1s ease;
+      text-decoration: none;
     }
 
     .btn:active {
@@ -372,9 +394,26 @@
       color: #374151;
     }
 
-    .results-detail ul {
-      margin-top: 4px;
-      padding-left: 18px;
+    .results-detail p {
+      margin-bottom: 8px;
+    }
+
+    .results-upsell-title {
+      font-weight: 600;
+      color: var(--blue-main);
+      margin-bottom: 4px;
+    }
+
+    .results-upsell-list {
+      margin: 4px 0 6px 18px;
+    }
+
+    .results-upsell-list li {
+      margin-bottom: 2px;
+    }
+
+    .results-upsell-footer {
+      margin-top: 8px;
     }
 
     .error {
@@ -413,6 +452,11 @@
       .topic-list {
         font-size: 0.9rem;
       }
+
+      .notice {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -450,10 +494,27 @@
   </header>
 
   <main class="quiz-container">
+    <!-- Top upsell card (free vs paid) -->
     <div id="initialNotice" class="notice">
-      <strong>How to use:</strong> Open this page from your EasyLearn System Histology course.
-      Each “Start Quiz” button passes the correct topic code (for example <code>?topic=SH-01</code>).
-      You can also click a topic below to switch.
+      <div class="notice-left">
+        <div class="notice-title">Need full exam-style practice?</div>
+        <div class="notice-text">
+          This page gives you free topic-based quizzes for <strong>System Histology</strong>.
+          For a realistic final-style exam that combines <strong>all 15 topics</strong> with
+          <strong>case-based clinical questions</strong> and full explanations, you can unlock the
+          <strong>System Histology Final-Style Exam</strong> (paid).
+        </div>
+      </div>
+      <div class="notice-actions">
+        <!-- TODO: update href to your real WordPress access/product page URL -->
+        <a
+          href="https://easy-learns.com/system-histology-final-style-exam/"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Unlock Final-Style Exam (Paid)
+        </a>
+      </div>
     </div>
 
     <div id="topicInfo" class="topic-list">
@@ -535,7 +596,34 @@
         </div>
 
         <div class="results-detail" id="resultsDetail">
-          <!-- Per-quiz feedback text -->
+          <p id="resultsMessage">
+            <!-- JS will set this text: auto-submit vs normal submit -->
+          </p>
+
+          <div class="results-upsell">
+            <div class="results-upsell-title">
+              Want full explanations and real exam practice?
+            </div>
+            <p>
+              Upgrade to the <strong>System Histology Final-Style Exam (Case-Based)</strong> and unlock:
+            </p>
+            <ul class="results-upsell-list">
+              <li>Clinical scenarios and case-based questions</li>
+              <li>Mixed topics from all 15 System Histology units</li>
+              <li>Full explanations for every question</li>
+              <li>Final-exam style format and timing</li>
+            </ul>
+            <div class="results-upsell-footer">
+              <!-- TODO: update href to your real WordPress access/product page URL -->
+              <a
+                href="https://easy-learns.com/system-histology-final-style-exam/"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Unlock Final-Style Exam (Paid)
+              </a>
+            </div>
+          </div>
         </div>
 
         <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
@@ -582,10 +670,7 @@
   let quizStartedAt = null;
 
   // ---- DOM refs ----
-  const initialNotice = document.getElementById("initialNotice");
-  const topicInfo = document.getElementById("topicInfo");
   const errorBox = document.getElementById("errorBox");
-
   const quizSection = document.getElementById("quizSection");
   const questionCounter = document.getElementById("questionCounter");
   const questionText = document.getElementById("questionText");
@@ -602,6 +687,7 @@
   const percentText = document.getElementById("percentText");
   const timeUsedText = document.getElementById("timeUsedText");
   const resultsDetail = document.getElementById("resultsDetail");
+  const resultsMessage = document.getElementById("resultsMessage");
   const reviewBtn = document.getElementById("reviewBtn");
   const restartBtn = document.getElementById("restartBtn");
 
@@ -728,9 +814,10 @@
     }
     timeUsedText.textContent = `${formatSeconds(usedSeconds)} used`;
 
-    resultsDetail.textContent = isAuto
+    // Short message before upsell
+    resultsMessage.textContent = isAuto
       ? "Time is over. Your answers have been submitted automatically."
-      : "You can review your answers or restart this topic.";
+      : "Your answers have been submitted. Review your responses or restart this topic.";
 
     resultsSection.classList.remove("hidden");
   }
@@ -796,7 +883,7 @@
     const topicCode = getQueryParam("topic");
 
     if (!topicCode) {
-      // No topic → show list and notice, but no quiz
+      // No topic → just show topic list + upsell, no quiz
       showError(
         "No topic selected. Please open this quiz using the 'Start Quiz' button on the System Histology course page or click one of the topics above."
       );
