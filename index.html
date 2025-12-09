@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>System Histology Quiz – EasyLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --blue-main: #1d4ed8;
+      --blue-light: #e0ebff;
+      --blue-lighter: #eef2ff;
+      --bg-page: #f3f4f6;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --danger: #b91c1c;
+      --success: #166534;
+      --border-radius-lg: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text-main);
+      padding: 16px;
+    }
+
+    .page-wrapper {
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+    }
+
+    .quiz-header {
+      background: var(--blue-main);
+      color: white;
+      padding: 18px 20px 16px 20px;
+      border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .logo-row {
+      text-align: center;
+    }
+
+    .logo-row img {
+      max-height: 52px;
+      width: auto;
+      display: inline-block;
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .quiz-title-block {
+      min-width: 250px;
+    }
+
+    .quiz-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .quiz-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      justify-content: flex-start;
+    }
+
+    .meta-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-label {
+      opacity: 0.85;
+    }
+
+    .meta-value {
+      font-weight: 600;
+    }
+
+    .timer {
+      font-weight: 700;
+    }
+
+    .quiz-container {
+      background: white;
+      border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+    }
+
+    .notice {
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--blue-lighter);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      border: 1px solid #c7d2fe;
+    }
+
+    .notice strong {
+      color: var(--blue-main);
+    }
+
+    .topic-list {
+      margin-top: 4px;
+      font-size: 0.92rem;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .topic-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    .topic-list ul {
+      margin-top: 4px;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .topic-list li {
+      margin-bottom: 3px;
+    }
+
+    .topic-list a {
+      text-decoration: none;
+      color: #1d4ed8;
+      font-weight: 500;
+    }
+
+    .topic-list a:hover {
+      text-decoration: underline;
+    }
+
+    .question-card {
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .question-header {
+      background: var(--blue-lighter);
+      padding: 10px 14px;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    .question-header h2 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--blue-main);
+    }
+
+    .question-body {
+      padding: 12px 14px 10px 14px;
+    }
+
+    .question-text {
+      font-size: 0.96rem;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option-btn {
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      cursor: pointer;
+      font-size: 0.94rem;
+      transition: background 0.15s ease, border-color 0.15s ease,
+        transform 0.05s ease;
+    }
+
+    .option-btn:hover {
+      background: #eff6ff;
+      border-color: var(--blue-main);
+      transform: translateY(-1px);
+    }
+
+    .option-btn.selected {
+      background: #dbeafe;
+      border-color: var(--blue-main);
+    }
+
+    .option-btn.correct {
+      background: #dcfce7;
+      border-color: var(--success);
+      color: #065f46;
+    }
+
+    .option-btn.incorrect {
+      background: #fee2e2;
+      border-color: var(--danger);
+      color: #7f1d1d;
+    }
+
+    .quiz-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 10px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    button {
+      border: none;
+    }
+
+    .btn {
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-weight: 500;
+      transition: background 0.15s ease, transform 0.05s ease,
+        box-shadow 0.1s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background: var(--blue-main);
+      color: white;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid #d1d5db;
+      color: #374151;
+    }
+
+    .btn-ghost:hover {
+      background: #f3f4f6;
+    }
+
+    .progress-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .progress-text strong {
+      color: var(--blue-main);
+    }
+
+    .progress-bar-wrapper {
+      margin-top: 6px;
+      width: 100%;
+      max-width: 260px;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #60a5fa, #2563eb);
+      transition: width 0.2s ease;
+    }
+
+    .results-card {
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 14px;
+      margin-top: 10px;
+      background: #f9fafb;
+    }
+
+    .results-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .summary-item {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+
+    .summary-label {
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+
+    .summary-value {
+      font-weight: 600;
+    }
+
+    .results-heading {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--blue-main);
+    }
+
+    .results-detail {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: #374151;
+    }
+
+    .results-detail ul {
+      margin-top: 4px;
+      padding-left: 18px;
+    }
+
+    .error {
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-header {
+        border-radius: 0;
+      }
+
+      .quiz-container {
+        border-radius: 0 0 12px 12px;
+        padding: 12px;
+      }
+
+      .quiz-title {
+        font-size: 1.1rem;
+      }
+
+      .quiz-subtitle {
+        font-size: 0.8rem;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .topic-list {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="quiz-header">
+    <div class="logo-row">
+      <!-- Make sure this path matches your repo structure -->
+      <img src="assets/logo.png" alt="EasyLearn Logo">
+    </div>
+    <div class="header-top">
+      <div class="quiz-title-block">
+        <div class="quiz-title" id="quizTitle">
+          System Histology Quiz
+        </div>
+        <div class="quiz-subtitle" id="quizSubtitle">
+          Free topic-based quiz from the System Histology course.
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="meta-pill">
+          <span class="meta-label">Topic:</span>
+          <span class="meta-value" id="headerTopicLabel">–</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-label">Questions:</span>
+          <span class="meta-value" id="headerQuestionCount">–</span>
+        </div>
+        <div class="meta-pill">
+          <span class="meta-label">Time:</span>
+          <span class="meta-value timer" id="headerTimer">–</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+    <div id="initialNotice" class="notice">
+      <strong>How to use:</strong> Open this page from your EasyLearn System Histology course.
+      Each “Start Quiz” button passes the correct topic code (for example <code>?topic=SH-01</code>).
+      You can also click a topic below to switch.
+    </div>
+
+    <div id="topicInfo" class="topic-list">
+      <strong>Available System Histology topics (click to select):</strong>
+      <ul>
+        <li><a href="?topic=SH-01">SH-01 – Cardiovascular System: Blood Vessels and Heart</a></li>
+        <li><a href="?topic=SH-02">SH-02 – Hematopoietic and Lymphoid System I: Blood and Bone Marrow</a></li>
+        <li><a href="?topic=SH-03">SH-03 – Hematopoietic and Lymphoid System II: Lymphoid Organs</a></li>
+        <li><a href="?topic=SH-04">SH-04 – Digestive System I: Oral Cavity, Esophagus, and Stomach</a></li>
+        <li><a href="?topic=SH-05">SH-05 – Digestive System II: Small and Large Intestine</a></li>
+        <li><a href="?topic=SH-06">SH-06 – Digestive System III: Accessory Organs (Liver and Gallbladder)</a></li>
+        <li><a href="?topic=SH-07">SH-07 – Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)</a></li>
+        <li><a href="?topic=SH-08">SH-08 – Respiratory System I: Conduction and Defense</a></li>
+        <li><a href="?topic=SH-09">SH-09 – Respiratory System II: Gas Exchange and Pleura</a></li>
+        <li><a href="?topic=SH-10">SH-10 – Urinary System I: Kidney (Cortex and Medulla)</a></li>
+        <li><a href="?topic=SH-11">SH-11 – Urinary System II: Juxtaglomerular Apparatus and Excretory Passages</a></li>
+        <li><a href="?topic=SH-12">SH-12 – Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands</a></li>
+        <li><a href="?topic=SH-13">SH-13 – Nervous System: Peripheral Nerves and CNS</a></li>
+        <li><a href="?topic=SH-14">SH-14 – Reproductive System: Male and Female (General Structure)</a></li>
+        <li><a href="?topic=SH-15">SH-15 – Integumentary and Special Senses</a></li>
+      </ul>
+    </div>
+
+    <div id="errorBox" class="error hidden"></div>
+
+    <section id="quizSection" class="hidden">
+      <article class="question-card">
+        <div class="question-header">
+          <h2 id="questionCounter">Question 1</h2>
+        </div>
+        <div class="question-body">
+          <div class="question-text" id="questionText">
+            Loading question…
+          </div>
+          <div class="options" id="optionsContainer">
+            <!-- Options injected by JS -->
+          </div>
+        </div>
+      </article>
+
+      <footer class="quiz-footer">
+        <div>
+          <div class="progress-text" id="progressText">
+            Question <strong>1</strong> of <strong>1</strong>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+          </div>
+        </div>
+
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="prevBtn" type="button">
+            ◀ Previous
+          </button>
+          <button class="btn btn-secondary" id="nextBtn" type="button">
+            Next ▶
+          </button>
+          <button class="btn btn-primary" id="submitBtn" type="button">
+            Submit Quiz ✅
+          </button>
+        </div>
+      </footer>
+
+      <section id="resultsSection" class="results-card hidden">
+        <div class="results-heading">Results</div>
+        <div class="results-summary">
+          <div class="summary-item">
+            <span class="summary-label">Score:</span>
+            <span class="summary-value" id="scoreText">0 / 0</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Percentage:</span>
+            <span class="summary-value" id="percentText">0%</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Time used:</span>
+            <span class="summary-value" id="timeUsedText">–</span>
+          </div>
+        </div>
+
+        <div class="results-detail" id="resultsDetail">
+          <!-- Per-quiz feedback text -->
+        </div>
+
+        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <button class="btn btn-ghost" id="reviewBtn" type="button">
+            🔍 Review answers
+          </button>
+          <button class="btn btn-secondary" id="restartBtn" type="button">
+            🔁 Restart this topic
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<script>
+  // ---- Topic configuration (15 topics) ----
+  const TOPIC_MAP = {
+    "SH-01": { short: "SH-01", title: "Cardiovascular System: Blood Vessels and Heart" },
+    "SH-02": { short: "SH-02", title: "Hematopoietic and Lymphoid System I: Blood and Bone Marrow" },
+    "SH-03": { short: "SH-03", title: "Hematopoietic and Lymphoid System II: Lymphoid Organs" },
+    "SH-04": { short: "SH-04", title: "Digestive System I: Oral Cavity, Esophagus, and Stomach" },
+    "SH-05": { short: "SH-05", title: "Digestive System II: Small and Large Intestine" },
+    "SH-06": { short: "SH-06", title: "Digestive System III: Accessory Organs (Liver and Gallbladder)" },
+    "SH-07": { short: "SH-07", title: "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)" },
+    "SH-08": { short: "SH-08", title: "Respiratory System I: Conduction and Defense" },
+    "SH-09": { short: "SH-09", title: "Respiratory System II: Gas Exchange and Pleura" },
+    "SH-10": { short: "SH-10", title: "Urinary System I: Kidney (Cortex and Medulla)" },
+    "SH-11": { short: "SH-11", title: "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages" },
+    "SH-12": { short: "SH-12", title: "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands" },
+    "SH-13": { short: "SH-13", title: "Nervous System: Peripheral Nerves and CNS" },
+    "SH-14": { short: "SH-14", title: "Reproductive System: Male and Female (General Structure)" },
+    "SH-15": { short: "SH-15", title: "Integumentary and Special Senses" }
+  };
+
+  // ---- State ----
+  let allQuestions = [];
+  let filteredQuestions = [];
+  let currentIndex = 0;
+  let userAnswers = [];
+  let timerTotalSeconds = 0;
+  let timerRemaining = 0;
+  let timerInterval = null;
+  let quizStartedAt = null;
+
+  // ---- DOM refs ----
+  const initialNotice = document.getElementById("initialNotice");
+  const topicInfo = document.getElementById("topicInfo");
+  const errorBox = document.getElementById("errorBox");
+
+  const quizSection = document.getElementById("quizSection");
+  const questionCounter = document.getElementById("questionCounter");
+  const questionText = document.getElementById("questionText");
+  const optionsContainer = document.getElementById("optionsContainer");
+  const progressText = document.getElementById("progressText");
+  const progressBarFill = document.getElementById("progressBarFill");
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const submitBtn = document.getElementById("submitBtn");
+
+  const resultsSection = document.getElementById("resultsSection");
+  const scoreText = document.getElementById("scoreText");
+  const percentText = document.getElementById("percentText");
+  const timeUsedText = document.getElementById("timeUsedText");
+  const resultsDetail = document.getElementById("resultsDetail");
+  const reviewBtn = document.getElementById("reviewBtn");
+  const restartBtn = document.getElementById("restartBtn");
+
+  const quizTitle = document.getElementById("quizTitle");
+  const quizSubtitle = document.getElementById("quizSubtitle");
+  const headerTopicLabel = document.getElementById("headerTopicLabel");
+  const headerQuestionCount = document.getElementById("headerQuestionCount");
+  const headerTimer = document.getElementById("headerTimer");
+
+  // ---- Helpers ----
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  function formatSeconds(total) {
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  }
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.classList.remove("hidden");
+  }
+
+  function clearError() {
+    errorBox.textContent = "";
+    errorBox.classList.add("hidden");
+  }
+
+  function updateHeaderMeta() {
+    headerQuestionCount.textContent = filteredQuestions.length.toString();
+    const perQuestion = 90; // 1.5 minutes per question
+    timerTotalSeconds = filteredQuestions.length * perQuestion;
+    timerRemaining = timerTotalSeconds;
+    headerTimer.textContent = formatSeconds(timerRemaining);
+  }
+
+  function renderQuestion() {
+    if (filteredQuestions.length === 0) return;
+
+    const qObj = filteredQuestions[currentIndex];
+    questionCounter.textContent = `Question ${currentIndex + 1}`;
+    questionText.textContent = qObj.q || "Question text missing";
+
+    // Progress
+    progressText.innerHTML = `Question <strong>${currentIndex + 1}</strong> of <strong>${filteredQuestions.length}</strong>`;
+    const progressPercent =
+      filteredQuestions.length > 0 ? ((currentIndex + 1) / filteredQuestions.length) * 100 : 0;
+    progressBarFill.style.width = `${progressPercent}%`;
+
+    // Options
+    optionsContainer.innerHTML = "";
+    const opts = qObj.options || [];
+    opts.forEach((optText, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "option-btn";
+      btn.textContent = optText;
+      if (userAnswers[currentIndex] === idx) {
+        btn.classList.add("selected");
+      }
+      btn.addEventListener("click", () => {
+        userAnswers[currentIndex] = idx;
+        renderQuestion();
+      });
+      optionsContainer.appendChild(btn);
+    });
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === filteredQuestions.length - 1;
+
+    const optionButtons = optionsContainer.querySelectorAll(".option-btn");
+    optionButtons.forEach((btn) => {
+      btn.classList.remove("correct", "incorrect");
+    });
+  }
+
+  function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    quizStartedAt = new Date();
+    timerInterval = setInterval(() => {
+      timerRemaining--;
+      if (timerRemaining < 0) timerRemaining = 0;
+      headerTimer.textContent = formatSeconds(timerRemaining);
+      if (timerRemaining <= 0) {
+        clearInterval(timerInterval);
+        autoSubmitOnTime();
+      }
+    }, 1000);
+  }
+
+  function autoSubmitOnTime() {
+    if (resultsSection.classList.contains("hidden")) {
+      submitQuiz(true);
+    }
+  }
+
+  function submitQuiz(isAuto = false) {
+    if (filteredQuestions.length === 0) return;
+    clearInterval(timerInterval);
+
+    let correctCount = 0;
+    const total = filteredQuestions.length;
+
+    filteredQuestions.forEach((qObj, idx) => {
+      const userIdx = userAnswers[idx];
+      const correctAnswer = qObj.answer;
+      const correctIndex = (qObj.options || []).findIndex((o) => o === correctAnswer);
+      if (userIdx === correctIndex && correctIndex !== -1) {
+        correctCount++;
+      }
+    });
+
+    const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+    scoreText.textContent = `${correctCount} / ${total}`;
+    percentText.textContent = `${percent}%`;
+
+    const now = new Date();
+    let usedSeconds = 0;
+    if (quizStartedAt) {
+      usedSeconds = Math.round((now - quizStartedAt) / 1000);
+    }
+    timeUsedText.textContent = `${formatSeconds(usedSeconds)} used`;
+
+    resultsDetail.textContent = isAuto
+      ? "Time is over. Your answers have been submitted automatically."
+      : "You can review your answers or restart this topic.";
+
+    resultsSection.classList.remove("hidden");
+  }
+
+  function reviewAnswers() {
+    const qObj = filteredQuestions[currentIndex];
+    if (!qObj) return;
+    const correctAnswer = qObj.answer;
+    const correctIndex = (qObj.options || []).findIndex((o) => o === correctAnswer);
+    const selectedIndex = userAnswers[currentIndex];
+
+    const btns = optionsContainer.querySelectorAll(".option-btn");
+    btns.forEach((btn, idx) => {
+      btn.classList.remove("correct", "incorrect");
+      if (idx === correctIndex) {
+        btn.classList.add("correct");
+      }
+      if (selectedIndex !== correctIndex && idx === selectedIndex) {
+        btn.classList.add("incorrect");
+      }
+    });
+  }
+
+  function restartTopic() {
+    clearInterval(timerInterval);
+    userAnswers = new Array(filteredQuestions.length).fill(null);
+    currentIndex = 0;
+    updateHeaderMeta();
+    renderQuestion();
+    resultsSection.classList.add("hidden");
+    startTimer();
+  }
+
+  // ---- Event listeners ----
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderQuestion();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < filteredQuestions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+    }
+  });
+
+  submitBtn.addEventListener("click", () => {
+    submitQuiz(false);
+  });
+
+  reviewBtn.addEventListener("click", () => {
+    reviewAnswers();
+  });
+
+  restartBtn.addEventListener("click", () => {
+    restartTopic();
+  });
+
+  // ---- Initialization ----
+  async function initQuiz() {
+    const topicCode = getQueryParam("topic");
+
+    if (!topicCode) {
+      // No topic → show list and notice, but no quiz
+      showError(
+        "No topic selected. Please open this quiz using the 'Start Quiz' button on the System Histology course page or click one of the topics above."
+      );
+      return;
+    }
+
+    const topicConfig = TOPIC_MAP[topicCode];
+    if (!topicConfig) {
+      showError(
+        `Unknown topic code "${topicCode}". Please use one of the listed System Histology topics above.`
+      );
+      return;
+    }
+
+    // Set header titles/meta
+    quizTitle.textContent = "System Histology – " + topicConfig.title;
+    quizSubtitle.textContent =
+      "Free topic-based quiz from the System Histology course.";
+    headerTopicLabel.textContent = topicConfig.short;
+
+    try {
+      clearError();
+      const res = await fetch("questions.json");
+      if (!res.ok) {
+        throw new Error("Unable to load questions.json");
+      }
+      const data = await res.json();
+      allQuestions = data.questions || [];
+      filteredQuestions = allQuestions.filter((q) => q.topic_code === topicCode);
+
+      if (filteredQuestions.length === 0) {
+        showError(
+          `No questions found for topic ${topicConfig.short}. Please check that your questions.json uses "topic_code": "${topicCode}".`
+        );
+        return;
+      }
+
+      userAnswers = new Array(filteredQuestions.length).fill(null);
+      updateHeaderMeta();
+
+      // Show quiz
+      quizSection.classList.remove("hidden");
+      renderQuestion();
+      startTimer();
+    } catch (err) {
+      console.error(err);
+      showError(
+        "There was a problem loading the questions. Please check that questions.json is in the same folder as this file."
+      );
+    }
+  }
+
+  initQuiz();
+</script>
+</body>
+</html>

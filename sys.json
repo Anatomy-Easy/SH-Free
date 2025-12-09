@@ -1,0 +1,918 @@
+{
+  "questions": [
+    {
+      "q": "Which structural feature best distinguishes a muscular artery from an elastic artery in histologic sections?",
+      "options": [
+        "Presence of multiple elastic lamellae in the tunica media",
+        "Relatively thick tunica media rich in smooth muscle cells",
+        "Poorly defined internal elastic lamina",
+        "Very thin tunica adventitia"
+      ],
+      "answer": "Relatively thick tunica media rich in smooth muscle cells",
+      "topic": "Cardiovascular System: Blood Vessels and Heart",
+      "topic_code": "SH-01"
+    },
+    {
+      "q": "In a medium-sized vein, which layer is typically the thickest and most prominent?",
+      "options": [
+        "Tunica intima",
+        "Tunica media",
+        "Tunica adventitia",
+        "Internal elastic lamina"
+      ],
+      "answer": "Tunica adventitia",
+      "topic": "Cardiovascular System: Blood Vessels and Heart",
+      "topic_code": "SH-01"
+    },
+    {
+      "q": "Which chamber of the heart contains prominent trabeculae carneae and papillary muscles anchored to chordae tendineae?",
+      "options": [
+        "Left atrium",
+        "Right atrium",
+        "Left ventricle",
+        "Right ventricle"
+      ],
+      "answer": "Left ventricle",
+      "topic": "Cardiovascular System: Blood Vessels and Heart",
+      "topic_code": "SH-01"
+    },
+    {
+      "q": "Which specialized cardiac junction ensures rapid electrical coupling between adjacent cardiomyocytes?",
+      "options": [
+        "Hemidesmosomes",
+        "Fascia adherens",
+        "Gap junctions",
+        "Macula adherens (desmosomes)"
+      ],
+      "answer": "Gap junctions",
+      "topic": "Cardiovascular System: Blood Vessels and Heart",
+      "topic_code": "SH-01"
+    },
+    {
+      "q": "What is the main functional role of elastic arteries such as the aorta in the circulation?",
+      "options": [
+        "Act as primary resistance vessels to control blood pressure",
+        "Serve as exchange vessels for gases and nutrients",
+        "Dampen pulsatile output of the heart to maintain continuous blood flow",
+        "Provide a major site for leukocyte diapedesis"
+      ],
+      "answer": "Dampen pulsatile output of the heart to maintain continuous blood flow",
+      "topic": "Cardiovascular System: Blood Vessels and Heart",
+      "topic_code": "SH-01"
+    },
+
+    {
+      "q": "Which cell type is the immediate precursor of erythrocytes in the bone marrow?",
+      "options": [
+        "Reticulocyte",
+        "Myeloblast",
+        "Megakaryocyte",
+        "Normoblast"
+      ],
+      "answer": "Reticulocyte",
+      "topic": "Hematopoietic and Lymphoid System I: Blood and Bone Marrow",
+      "topic_code": "SH-02"
+    },
+    {
+      "q": "Which leukocyte is characterized by a bilobed nucleus and large eosinophilic specific granules in the cytoplasm?",
+      "options": [
+        "Neutrophil",
+        "Eosinophil",
+        "Basophil",
+        "Monocyte"
+      ],
+      "answer": "Eosinophil",
+      "topic": "Hematopoietic and Lymphoid System I: Blood and Bone Marrow",
+      "topic_code": "SH-02"
+    },
+    {
+      "q": "Which statement best describes the function of megakaryocytes in the bone marrow?",
+      "options": [
+        "They are precursors of neutrophils",
+        "They phagocytose aged erythrocytes",
+        "They give rise to platelets by cytoplasmic fragmentation",
+        "They secrete antibodies in response to antigens"
+      ],
+      "answer": "They give rise to platelets by cytoplasmic fragmentation",
+      "topic": "Hematopoietic and Lymphoid System I: Blood and Bone Marrow",
+      "topic_code": "SH-02"
+    },
+    {
+      "q": "Which component of circulating blood is anucleate and essential for primary hemostasis?",
+      "options": [
+        "Neutrophil",
+        "Platelet",
+        "Monocyte",
+        "Erythroblast"
+      ],
+      "answer": "Platelet",
+      "topic": "Hematopoietic and Lymphoid System I: Blood and Bone Marrow",
+      "topic_code": "SH-02"
+    },
+    {
+      "q": "Which feature best describes a mature erythrocyte under light microscopy?",
+      "options": [
+        "Large cell with central nucleus and basophilic cytoplasm",
+        "Biconcave disc without nucleus and with eosinophilic cytoplasm",
+        "Small cell with large nucleus and scant cytoplasm",
+        "Cell with azurophilic granules and kidney-shaped nucleus"
+      ],
+      "answer": "Biconcave disc without nucleus and with eosinophilic cytoplasm",
+      "topic": "Hematopoietic and Lymphoid System I: Blood and Bone Marrow",
+      "topic_code": "SH-02"
+    },
+
+    {
+      "q": "Which lymphoid organ is characterized by a cortex with lymphoid follicles and a medulla with medullary cords and sinuses?",
+      "options": [
+        "Thymus",
+        "Spleen",
+        "Lymph node",
+        "Palatine tonsil"
+      ],
+      "answer": "Lymph node",
+      "topic": "Hematopoietic and Lymphoid System II: Lymphoid Organs",
+      "topic_code": "SH-03"
+    },
+    {
+      "q": "The periarteriolar lymphoid sheath (PALS) is a characteristic feature of which organ?",
+      "options": [
+        "Thymus",
+        "Spleen",
+        "Palatine tonsil",
+        "Appendix"
+      ],
+      "answer": "Spleen",
+      "topic": "Hematopoietic and Lymphoid System II: Lymphoid Organs",
+      "topic_code": "SH-03"
+    },
+    {
+      "q": "Which region of a lymph node is primarily populated by T lymphocytes?",
+      "options": [
+        "Germinal centers of secondary follicles",
+        "Medullary cords",
+        "Paracortex",
+        "Subcapsular sinus"
+      ],
+      "answer": "Paracortex",
+      "topic": "Hematopoietic and Lymphoid System II: Lymphoid Organs",
+      "topic_code": "SH-03"
+    },
+    {
+      "q": "Which statement best describes the thymus in an adult?",
+      "options": [
+        "It lacks a cortex and medulla",
+        "It continues active lymphopoiesis throughout life without involution",
+        "It shows age-related fatty replacement with residual lymphoid tissue",
+        "It contains Hassall corpuscles only in the cortex"
+      ],
+      "answer": "It shows age-related fatty replacement with residual lymphoid tissue",
+      "topic": "Hematopoietic and Lymphoid System II: Lymphoid Organs",
+      "topic_code": "SH-03"
+    },
+    {
+      "q": "Hassall corpuscles are concentrically arranged epithelial reticular cells found in which part of the thymus?",
+      "options": [
+        "Cortex",
+        "Medulla",
+        "Capsule",
+        "Septa"
+      ],
+      "answer": "Medulla",
+      "topic": "Hematopoietic and Lymphoid System II: Lymphoid Organs",
+      "topic_code": "SH-03"
+    },
+
+    {
+      "q": "Which papillae of the tongue contain taste buds and are arranged in a V-shaped row anterior to the sulcus terminalis?",
+      "options": [
+        "Filiform papillae",
+        "Fungiform papillae",
+        "Circumvallate papillae",
+        "Foliate papillae"
+      ],
+      "answer": "Circumvallate papillae",
+      "topic": "Digestive System I: Oral Cavity, Esophagus, and Stomach",
+      "topic_code": "SH-04"
+    },
+    {
+      "q": "The esophagus is lined by which type of epithelium?",
+      "options": [
+        "Simple columnar epithelium with goblet cells",
+        "Stratified squamous non-keratinized epithelium",
+        "Transitional epithelium",
+        "Pseudostratified ciliated columnar epithelium"
+      ],
+      "answer": "Stratified squamous non-keratinized epithelium",
+      "topic": "Digestive System I: Oral Cavity, Esophagus, and Stomach",
+      "topic_code": "SH-04"
+    },
+    {
+      "q": "Which cell type in the gastric glands secretes hydrochloric acid and intrinsic factor?",
+      "options": [
+        "Chief (zymogenic) cells",
+        "Parietal (oxyntic) cells",
+        "Mucous neck cells",
+        "G cells"
+      ],
+      "answer": "Parietal (oxyntic) cells",
+      "topic": "Digestive System I: Oral Cavity, Esophagus, and Stomach",
+      "topic_code": "SH-04"
+    },
+    {
+      "q": "Which region of the stomach contains prominent mucous secreting glands in the lamina propria that protect the esophageal mucosa from gastric acid?",
+      "options": [
+        "Cardia",
+        "Fundus",
+        "Body",
+        "Pylorus"
+      ],
+      "answer": "Cardia",
+      "topic": "Digestive System I: Oral Cavity, Esophagus, and Stomach",
+      "topic_code": "SH-04"
+    },
+    {
+      "q": "Which structure is responsible for increasing surface area in the stomach but disappears when the organ is distended?",
+      "options": [
+        "Villi",
+        "Plicae circulares",
+        "Rugae (gastric folds)",
+        "Microvilli"
+      ],
+      "answer": "Rugae (gastric folds)",
+      "topic": "Digestive System I: Oral Cavity, Esophagus, and Stomach",
+      "topic_code": "SH-04"
+    },
+
+    {
+      "q": "Which feature best distinguishes the jejunum from the ileum histologically?",
+      "options": [
+        "Presence of Brunner glands in the submucosa",
+        "Numerous long villi and prominent plicae circulares",
+        "Abundant Peyer patches in the lamina propria and submucosa",
+        "Absence of goblet cells in the epithelium"
+      ],
+      "answer": "Numerous long villi and prominent plicae circulares",
+      "topic": "Digestive System II: Small and Large Intestine",
+      "topic_code": "SH-05"
+    },
+    {
+      "q": "Which specialized glands in the duodenum secrete alkaline mucus to neutralize gastric acid?",
+      "options": [
+        "Peyer patches",
+        "Brunner glands",
+        "Paneth cells",
+        "Goblet cells"
+      ],
+      "answer": "Brunner glands",
+      "topic": "Digestive System II: Small and Large Intestine",
+      "topic_code": "SH-05"
+    },
+    {
+      "q": "Which structure is present in the large intestine but absent in the small intestine?",
+      "options": [
+        "Crypts of Lieberkühn",
+        "Villi",
+        "Goblet cells",
+        "Taeniae coli"
+      ],
+      "answer": "Taeniae coli",
+      "topic": "Digestive System II: Small and Large Intestine",
+      "topic_code": "SH-05"
+    },
+    {
+      "q": "Which cell type in the intestinal crypts secretes antimicrobial substances such as lysozyme and defensins?",
+      "options": [
+        "Enterocytes",
+        "Goblet cells",
+        "Paneth cells",
+        "Enteroendocrine cells"
+      ],
+      "answer": "Paneth cells",
+      "topic": "Digestive System II: Small and Large Intestine",
+      "topic_code": "SH-05"
+    },
+    {
+      "q": "Which epithelial type lines the lumen of the small intestine?",
+      "options": [
+        "Simple columnar epithelium with goblet cells",
+        "Stratified squamous non-keratinized epithelium",
+        "Simple cuboidal epithelium",
+        "Pseudostratified ciliated columnar epithelium"
+      ],
+      "answer": "Simple columnar epithelium with goblet cells",
+      "topic": "Digestive System II: Small and Large Intestine",
+      "topic_code": "SH-05"
+    },
+
+    {
+      "q": "Which structural organization is characteristic of the classical hepatic lobule?",
+      "options": [
+        "Portal triad at the center and central vein at the periphery",
+        "Central vein at the center and portal triads at the corners",
+        "Central vein and portal triad both at the center",
+        "Random arrangement of hepatocytes without clear axis"
+      ],
+      "answer": "Central vein at the center and portal triads at the corners",
+      "topic": "Digestive System III: Accessory Organs (Liver and Gallbladder)",
+      "topic_code": "SH-06"
+    },
+    {
+      "q": "Which cell type in the liver is responsible for phagocytosis of aged erythrocytes and particulate matter?",
+      "options": [
+        "Hepatocytes",
+        "Kupffer cells",
+        "Ito (stellate) cells",
+        "Endothelial cells"
+      ],
+      "answer": "Kupffer cells",
+      "topic": "Digestive System III: Accessory Organs (Liver and Gallbladder)",
+      "topic_code": "SH-06"
+    },
+    {
+      "q": "Which statement best describes the gallbladder mucosa?",
+      "options": [
+        "Contains villi and crypts similar to small intestine",
+        "Lined by simple columnar epithelium with apical microvilli",
+        "Contains Brunner glands in the submucosa",
+        "Lined by stratified squamous epithelium"
+      ],
+      "answer": "Lined by simple columnar epithelium with apical microvilli",
+      "topic": "Digestive System III: Accessory Organs (Liver and Gallbladder)",
+      "topic_code": "SH-06"
+    },
+    {
+      "q": "Which component of the portal triad carries blood rich in nutrients from the intestine to the liver?",
+      "options": [
+        "Hepatic artery branch",
+        "Portal vein branch",
+        "Bile duct",
+        "Lymphatic vessel"
+      ],
+      "answer": "Portal vein branch",
+      "topic": "Digestive System III: Accessory Organs (Liver and Gallbladder)",
+      "topic_code": "SH-06"
+    },
+    {
+      "q": "The space of Disse is located between which two structures in the liver?",
+      "options": [
+        "Hepatocytes and bile canaliculi",
+        "Hepatocytes and sinusoidal endothelium",
+        "Sinusoids and central vein",
+        "Portal triad and limiting plate"
+      ],
+      "answer": "Hepatocytes and sinusoidal endothelium",
+      "topic": "Digestive System III: Accessory Organs (Liver and Gallbladder)",
+      "topic_code": "SH-06"
+    },
+
+    {
+      "q": "Which feature best distinguishes the exocrine pancreas from the parotid salivary gland?",
+      "options": [
+        "Presence of purely serous acini",
+        "Presence of intercalated and striated ducts",
+        "Presence of islets of Langerhans scattered among acini",
+        "Presence of mucous acini with serous demilunes"
+      ],
+      "answer": "Presence of islets of Langerhans scattered among acini",
+      "topic": "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)",
+      "topic_code": "SH-07"
+    },
+    {
+      "q": "Which salivary gland is almost entirely serous in its secretory units?",
+      "options": [
+        "Parotid gland",
+        "Submandibular gland",
+        "Sublingual gland",
+        "Minor labial glands"
+      ],
+      "answer": "Parotid gland",
+      "topic": "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)",
+      "topic_code": "SH-07"
+    },
+    {
+      "q": "What is the main function of centroacinar cells in the pancreas?",
+      "options": [
+        "Secretion of digestive enzymes",
+        "Secretion of bicarbonate-rich fluid",
+        "Production of insulin",
+        "Phagocytosis of old erythrocytes"
+      ],
+      "answer": "Secretion of bicarbonate-rich fluid",
+      "topic": "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)",
+      "topic_code": "SH-07"
+    },
+    {
+      "q": "Which pancreatic endocrine cell type secretes glucagon?",
+      "options": [
+        "Alpha cells",
+        "Beta cells",
+        "Delta cells",
+        "PP cells"
+      ],
+      "answer": "Alpha cells",
+      "topic": "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)",
+      "topic_code": "SH-07"
+    },
+    {
+      "q": "Which of the following correctly describes striated ducts in salivary glands?",
+      "options": [
+        "They are lined by stratified squamous epithelium",
+        "They actively modify saliva by reabsorbing sodium and secreting potassium and bicarbonate",
+        "They are found only in minor salivary glands",
+        "They are absent in the parotid gland"
+      ],
+      "answer": "They actively modify saliva by reabsorbing sodium and secreting potassium and bicarbonate",
+      "topic": "Digestive System IV: Accessory Organs (Pancreas and Salivary Glands)",
+      "topic_code": "SH-07"
+    },
+
+    {
+      "q": "Which epithelial type lines the trachea?",
+      "options": [
+        "Stratified squamous keratinized epithelium",
+        "Pseudostratified ciliated columnar epithelium with goblet cells",
+        "Simple squamous epithelium",
+        "Transitional epithelium"
+      ],
+      "answer": "Pseudostratified ciliated columnar epithelium with goblet cells",
+      "topic": "Respiratory System I: Conduction and Defense",
+      "topic_code": "SH-08"
+    },
+    {
+      "q": "Which structure is present in bronchi but absent in bronchioles?",
+      "options": [
+        "Smooth muscle in the wall",
+        "Respiratory epithelium",
+        "Cartilage plates",
+        "Capillary networks"
+      ],
+      "answer": "Cartilage plates",
+      "topic": "Respiratory System I: Conduction and Defense",
+      "topic_code": "SH-08"
+    },
+    {
+      "q": "Clara (club) cells in bronchioles mainly function to:",
+      "options": [
+        "Produce surfactant and detoxify inhaled substances",
+        "Secrete mucus and form cilia",
+        "Phagocytose dust particles",
+        "Produce elastin fibers"
+      ],
+      "answer": "Produce surfactant and detoxify inhaled substances",
+      "topic": "Respiratory System I: Conduction and Defense",
+      "topic_code": "SH-08"
+    },
+    {
+      "q": "Which component of the mucociliary escalator is primarily responsible for moving mucus toward the pharynx?",
+      "options": [
+        "Goblet cells",
+        "Serous glands",
+        "Ciliated epithelial cells",
+        "Basal cells"
+      ],
+      "answer": "Ciliated epithelial cells",
+      "topic": "Respiratory System I: Conduction and Defense",
+      "topic_code": "SH-08"
+    },
+    {
+      "q": "In chronic smokers, the respiratory epithelium of bronchi is often replaced by which epithelium as an adaptive change?",
+      "options": [
+        "Simple squamous epithelium",
+        "Simple cuboidal epithelium",
+        "Stratified squamous epithelium",
+        "Transitional epithelium"
+      ],
+      "answer": "Stratified squamous epithelium",
+      "topic": "Respiratory System I: Conduction and Defense",
+      "topic_code": "SH-08"
+    },
+
+    {
+      "q": "Which cell type in the alveoli is primarily responsible for gas exchange?",
+      "options": [
+        "Type I pneumocyte",
+        "Type II pneumocyte",
+        "Alveolar macrophage",
+        "Endothelial cell of the arteriole"
+      ],
+      "answer": "Type I pneumocyte",
+      "topic": "Respiratory System II: Gas Exchange and Pleura",
+      "topic_code": "SH-09"
+    },
+    {
+      "q": "Type II pneumocytes are important because they:",
+      "options": [
+        "Form the blood–air barrier",
+        "Produce pulmonary surfactant",
+        "Form the visceral pleura",
+        "Differentiate into ciliated cells"
+      ],
+      "answer": "Produce pulmonary surfactant",
+      "topic": "Respiratory System II: Gas Exchange and Pleura",
+      "topic_code": "SH-09"
+    },
+    {
+      "q": "Which components form the blood–air barrier in the lung?",
+      "options": [
+        "Type II cell cytoplasm, surfactant, and basement membrane",
+        "Alveolar epithelium, fused basal laminae, and capillary endothelium",
+        "Visceral pleura and parietal pleura",
+        "Bronchiolar epithelium and smooth muscle"
+      ],
+      "answer": "Alveolar epithelium, fused basal laminae, and capillary endothelium",
+      "topic": "Respiratory System II: Gas Exchange and Pleura",
+      "topic_code": "SH-09"
+    },
+    {
+      "q": "Alveolar macrophages in the lung are mainly located:",
+      "options": [
+        "Within the tunica intima of arteries",
+        "On the luminal surface and in the septa of alveoli",
+        "Inside the bronchiolar smooth muscle",
+        "Within the visceral pleura only"
+      ],
+      "answer": "On the luminal surface and in the septa of alveoli",
+      "topic": "Respiratory System II: Gas Exchange and Pleura",
+      "topic_code": "SH-09"
+    },
+    {
+      "q": "Which membrane directly covers the outer surface of the lung parenchyma?",
+      "options": [
+        "Parietal pleura",
+        "Visceral pleura",
+        "Endothelium",
+        "Mesothelium of the diaphragm"
+      ],
+      "answer": "Visceral pleura",
+      "topic": "Respiratory System II: Gas Exchange and Pleura",
+      "topic_code": "SH-09"
+    },
+
+    {
+      "q": "Which structure in the kidney contains renal corpuscles?",
+      "options": [
+        "Renal papilla",
+        "Renal medulla",
+        "Renal cortex",
+        "Minor calyx"
+      ],
+      "answer": "Renal cortex",
+      "topic": "Urinary System I: Kidney (Cortex and Medulla)",
+      "topic_code": "SH-10"
+    },
+    {
+      "q": "Which component of the renal corpuscle is formed by the visceral layer of Bowman capsule?",
+      "options": [
+        "Endothelial cells",
+        "Podocytes",
+        "Mesangial cells",
+        "Macula densa"
+      ],
+      "answer": "Podocytes",
+      "topic": "Urinary System I: Kidney (Cortex and Medulla)",
+      "topic_code": "SH-10"
+    },
+    {
+      "q": "Which part of the nephron has a brush border of long microvilli and is responsible for most tubular reabsorption?",
+      "options": [
+        "Proximal convoluted tubule",
+        "Distal convoluted tubule",
+        "Thin descending limb of Henle",
+        "Collecting duct"
+      ],
+      "answer": "Proximal convoluted tubule",
+      "topic": "Urinary System I: Kidney (Cortex and Medulla)",
+      "topic_code": "SH-10"
+    },
+    {
+      "q": "The medullary rays are found in which part of the kidney?",
+      "options": [
+        "Only in the medulla",
+        "Only in the cortex",
+        "In the cortex as straight tubules extending toward the medulla",
+        "Only in the renal sinus"
+      ],
+      "answer": "In the cortex as straight tubules extending toward the medulla",
+      "topic": "Urinary System I: Kidney (Cortex and Medulla)",
+      "topic_code": "SH-10"
+    },
+    {
+      "q": "Which structure marks the transition between the proximal tubule and the thin limb of Henle’s loop?",
+      "options": [
+        "Macula densa",
+        "Urinary pole",
+        "Vascular pole",
+        "Straight portion of the proximal tubule"
+      ],
+      "answer": "Straight portion of the proximal tubule",
+      "topic": "Urinary System I: Kidney (Cortex and Medulla)",
+      "topic_code": "SH-10"
+    },
+
+    {
+      "q": "Which specialized group of cells senses sodium chloride concentration in the distal tubule and helps regulate renin release?",
+      "options": [
+        "Podocytes",
+        "Mesangial cells",
+        "Macula densa cells",
+        "Intercalated cells"
+      ],
+      "answer": "Macula densa cells",
+      "topic": "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages",
+      "topic_code": "SH-11"
+    },
+    {
+      "q": "Juxtaglomerular (JG) cells are modified smooth muscle cells located in the wall of which vessel?",
+      "options": [
+        "Afferent arteriole",
+        "Efferent arteriole",
+        "Peritubular capillary",
+        "Vasa recta"
+      ],
+      "answer": "Afferent arteriole",
+      "topic": "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages",
+      "topic_code": "SH-11"
+    },
+    {
+      "q": "Which hormone is secreted by JG cells in response to decreased renal perfusion pressure?",
+      "options": [
+        "Aldosterone",
+        "Renin",
+        "Erythropoietin",
+        "Antidiuretic hormone"
+      ],
+      "answer": "Renin",
+      "topic": "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages",
+      "topic_code": "SH-11"
+    },
+    {
+      "q": "The ureter is lined by which type of epithelium?",
+      "options": [
+        "Simple squamous epithelium",
+        "Stratified squamous epithelium",
+        "Transitional epithelium (urothelium)",
+        "Pseudostratified columnar epithelium"
+      ],
+      "answer": "Transitional epithelium (urothelium)",
+      "topic": "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages",
+      "topic_code": "SH-11"
+    },
+    {
+      "q": "Which layer of the urinary bladder wall is responsible for its ability to distend and recoil?",
+      "options": [
+        "Lamina propria",
+        "Detrusor smooth muscle",
+        "Submucosa",
+        "Adventitia"
+      ],
+      "answer": "Detrusor smooth muscle",
+      "topic": "Urinary System II: Juxtaglomerular Apparatus and Excretory Passages",
+      "topic_code": "SH-11"
+    },
+
+    {
+      "q": "Which cell type in the anterior pituitary secretes growth hormone?",
+      "options": [
+        "Acidophils (somatotrophs)",
+        "Basophils (thyrotrophs)",
+        "Chromophobes",
+        "Pituicytes"
+      ],
+      "answer": "Acidophils (somatotrophs)",
+      "topic": "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands",
+      "topic_code": "SH-12"
+    },
+    {
+      "q": "Thyroid follicles are lined by which epithelium in a normally active gland?",
+      "options": [
+        "Simple squamous epithelium",
+        "Simple cuboidal to low columnar epithelium",
+        "Stratified squamous epithelium",
+        "Pseudostratified epithelium"
+      ],
+      "answer": "Simple cuboidal to low columnar epithelium",
+      "topic": "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands",
+      "topic_code": "SH-12"
+    },
+    {
+      "q": "Parafollicular (C) cells of the thyroid secrete which hormone?",
+      "options": [
+        "Parathyroid hormone",
+        "Calcitonin",
+        "Thyroxine (T4)",
+        "Triiodothyronine (T3)"
+      ],
+      "answer": "Calcitonin",
+      "topic": "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands",
+      "topic_code": "SH-12"
+    },
+    {
+      "q": "Which region of the adrenal gland secretes mineralocorticoids such as aldosterone?",
+      "options": [
+        "Zona glomerulosa",
+        "Zona fasciculata",
+        "Zona reticularis",
+        "Adrenal medulla"
+      ],
+      "answer": "Zona glomerulosa",
+      "topic": "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands",
+      "topic_code": "SH-12"
+    },
+    {
+      "q": "Chief (principal) cells in the parathyroid glands mainly secrete:",
+      "options": [
+        "Calcitonin",
+        "Parathyroid hormone",
+        "Insulin",
+        "Glucagon"
+      ],
+      "answer": "Parathyroid hormone",
+      "topic": "Endocrine System: Pituitary, Thyroid, Parathyroid, and Adrenal Glands",
+      "topic_code": "SH-12"
+    },
+
+    {
+      "q": "Which glial cell in the CNS is primarily responsible for forming myelin sheaths around multiple axons?",
+      "options": [
+        "Schwann cell",
+        "Oligodendrocyte",
+        "Astrocyte",
+        "Microglial cell"
+      ],
+      "answer": "Oligodendrocyte",
+      "topic": "Nervous System: Peripheral Nerves and CNS",
+      "topic_code": "SH-13"
+    },
+    {
+      "q": "In a peripheral nerve, which connective tissue layer surrounds individual axons and their Schwann cells?",
+      "options": [
+        "Epineurium",
+        "Perineurium",
+        "Endoneurium",
+        "Pia mater"
+      ],
+      "answer": "Endoneurium",
+      "topic": "Nervous System: Peripheral Nerves and CNS",
+      "topic_code": "SH-13"
+    },
+    {
+      "q": "Which part of a neuron contains Nissl bodies and serves as the major site of protein synthesis?",
+      "options": [
+        "Axon hillock",
+        "Cell body (soma)",
+        "Node of Ranvier",
+        "Axon terminal"
+      ],
+      "answer": "Cell body (soma)",
+      "topic": "Nervous System: Peripheral Nerves and CNS",
+      "topic_code": "SH-13"
+    },
+    {
+      "q": "Nodes of Ranvier are important for which conduction phenomenon in myelinated axons?",
+      "options": [
+        "Continuous conduction",
+        "Saltatory conduction",
+        "Chemical synaptic transmission",
+        "Retrograde transport"
+      ],
+      "answer": "Saltatory conduction",
+      "topic": "Nervous System: Peripheral Nerves and CNS",
+      "topic_code": "SH-13"
+    },
+    {
+      "q": "Which glial cell in the CNS acts as a resident macrophage involved in immune defense?",
+      "options": [
+        "Astrocyte",
+        "Microglial cell",
+        "Ependymal cell",
+        "Oligodendrocyte"
+      ],
+      "answer": "Microglial cell",
+      "topic": "Nervous System: Peripheral Nerves and CNS",
+      "topic_code": "SH-13"
+    },
+
+    {
+      "q": "Which structure forms the outermost layer of the testis and is continuous with the visceral layer of the tunica vaginalis?",
+      "options": [
+        "Tunica intima",
+        "Tunica albuginea",
+        "Tunica muscularis",
+        "Tunica media"
+      ],
+      "answer": "Tunica albuginea",
+      "topic": "Reproductive System: Male and Female (General Structure)",
+      "topic_code": "SH-14"
+    },
+    {
+      "q": "Which cell type in the seminiferous tubules provides structural and metabolic support to developing sperm cells?",
+      "options": [
+        "Leydig cells",
+        "Sertoli cells",
+        "Smooth muscle cells",
+        "Myoid cells"
+      ],
+      "answer": "Sertoli cells",
+      "topic": "Reproductive System: Male and Female (General Structure)",
+      "topic_code": "SH-14"
+    },
+    {
+      "q": "Which layer of the uterine wall undergoes cyclic changes and is shed during menstruation?",
+      "options": [
+        "Myometrium",
+        "Endometrium – functional layer",
+        "Endometrium – basal layer",
+        "Perimetrium"
+      ],
+      "answer": "Endometrium – functional layer",
+      "topic": "Reproductive System: Male and Female (General Structure)",
+      "topic_code": "SH-14"
+    },
+    {
+      "q": "Which ovarian structure represents a large fluid-filled follicle that is close to ovulation?",
+      "options": [
+        "Primordial follicle",
+        "Primary follicle",
+        "Secondary (antral) follicle",
+        "Graafian (mature) follicle"
+      ],
+      "answer": "Graafian (mature) follicle",
+      "topic": "Reproductive System: Male and Female (General Structure)",
+      "topic_code": "SH-14"
+    },
+    {
+      "q": "Following ovulation, the ruptured follicle transforms into which endocrine structure?",
+      "options": [
+        "Corpus albicans",
+        "Corpus luteum",
+        "Atretic follicle",
+        "Zona pellucida"
+      ],
+      "answer": "Corpus luteum",
+      "topic": "Reproductive System: Male and Female (General Structure)",
+      "topic_code": "SH-14"
+    },
+
+    {
+      "q": "Which epidermal layer contains mitotically active keratinocytes responsible for continuous renewal of the epidermis?",
+      "options": [
+        "Stratum corneum",
+        "Stratum granulosum",
+        "Stratum spinosum",
+        "Stratum basale"
+      ],
+      "answer": "Stratum basale",
+      "topic": "Integumentary and Special Senses",
+      "topic_code": "SH-15"
+    },
+    {
+      "q": "Which type of sweat gland plays a major role in thermoregulation and is widely distributed over the body surface?",
+      "options": [
+        "Apocrine sweat gland",
+        "Eccrine sweat gland",
+        "Sebaceous gland",
+        "Ceruminous gland"
+      ],
+      "answer": "Eccrine sweat gland",
+      "topic": "Integumentary and Special Senses",
+      "topic_code": "SH-15"
+    },
+    {
+      "q": "Meissner corpuscles are mechanoreceptors primarily involved in detecting:",
+      "options": [
+        "Deep pressure and vibration",
+        "Fine touch in hairless skin",
+        "Pain and temperature",
+        "Muscle stretch"
+      ],
+      "answer": "Fine touch in hairless skin",
+      "topic": "Integumentary and Special Senses",
+      "topic_code": "SH-15"
+    },
+    {
+      "q": "Which component of the eye is a transparent avascular structure that contributes most to the refraction of light?",
+      "options": [
+        "Cornea",
+        "Lens",
+        "Retina",
+        "Choroid"
+      ],
+      "answer": "Cornea",
+      "topic": "Integumentary and Special Senses",
+      "topic_code": "SH-15"
+    },
+    {
+      "q": "In the cochlea, the organ of Corti rests on which membrane?",
+      "options": [
+        "Reissner membrane",
+        "Basilar membrane",
+        "Tectorial membrane",
+        "Tympanic membrane"
+      ],
+      "answer": "Basilar membrane",
+      "topic": "Integumentary and Special Senses",
+      "topic_code": "SH-15"
+    }
+  ]
+}
